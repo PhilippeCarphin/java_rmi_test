@@ -9,7 +9,7 @@ public class Client {
 
 	public static void main(String args[]){
 
-		String host = (args.length < 1) ? localhost : args[0];
+		String host = (args.length < 1) ? "localhost" : args[0];
 
 		try {
 
