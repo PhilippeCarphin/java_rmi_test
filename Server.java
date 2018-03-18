@@ -9,11 +9,12 @@ public class Server implements Hello {
 	public Server() {}
 
 	public String sayHello() {
+		System.out.println("Received request");
 		return "Hello, World";
 	}
 
 	public static void main(String args[]) {
-		
+
 		try {
 
 			Server obj = new Server();
@@ -21,7 +22,7 @@ public class Server implements Hello {
 
 			// Bind the remote object's stub in the registry
 			Registry registry = LocateRegistry.getRegistry();
-			registry.bind("Hello", stub);
+			registry.rebind("Hello", stub);
 
 			System.err.println("Server ready");
 
